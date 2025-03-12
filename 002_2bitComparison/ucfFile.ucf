@@ -1,0 +1,8 @@
+# inputs
+NET "a(1)" LOC = R9;
+NET "a(0)" LOC = P4;
+NET "b(1)" LOC = R7;
+NET "b(0)" LOC = N9;
+
+# outputs
+NET "aeqb" LOC = N12;

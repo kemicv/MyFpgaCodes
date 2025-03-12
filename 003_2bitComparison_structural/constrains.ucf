@@ -1,0 +1,5 @@
+NET a(0) LOC = "N9";
+NET a(1) LOC = "R7";
+NET b(0) LOC = "P4";
+NET b(1) LOC = "R9";
+NET abeq LOC = "P12";
