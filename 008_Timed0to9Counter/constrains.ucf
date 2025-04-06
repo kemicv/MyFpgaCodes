@@ -1,0 +1,13 @@
+NET clk LOC = "E7";
+NET reset LOC = "R7";
+NET bcd(0) LOC = "P12";
+NET bcd(1) LOC = "P8";
+NET bcd(2) LOC = "P6";
+NET bcd(3) LOC = "P11";
+NET display(6) LOC = "P16";
+NET display(5) LOC = "P15";
+NET display(4) LOC = "T15";
+NET display(3) LOC = "T14";
+NET display(2) LOC = "T13";
+NET display(1) LOC = "R16";
+NET display(0) LOC = "R15";

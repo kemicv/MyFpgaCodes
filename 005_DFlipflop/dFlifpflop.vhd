@@ -7,17 +7,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 --  to 'Q' until the next 'clock' rising edge.
 --  Reset restores the 'Q' value to 0.
 
-entity d_flipflop is
+entity dFlipflop is
     port ( clk   : in std_logic;
            reset : in std_logic;
            d     : in std_logic;
-           q     : out std_logic;
-    );
-end d_flipflop;
+           q     : out std_logic);
+end dFlipflop;
 
-architecture Behavioral of d_flipflop is
+architecture Behavioral of dFlipflop is
 begin
-    -- Process block is only executed when clk or reset changes
+-- Process block is only executed when clk or reset changes
     process(clk, reset)
     begin
         if reset = '1' then
@@ -27,3 +26,4 @@ begin
         end if;
     end process;
 end Behavioral;
+

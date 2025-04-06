@@ -1,0 +1,5 @@
+NET "clk" CLOCK_DEDICATED_ROUTE = FALSE;
+NET clk LOC = "N9";
+NET reset LOC = "R7";
+NET d LOC = "P4";
+NET q LOC = "P12";
