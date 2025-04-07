@@ -1,0 +1,18 @@
+NET clk LOC = "E7";
+
+NET annodes(7) LOC = "E11";
+NET annodes(6) LOC = "D11";
+NET annodes(5) LOC = "C15";
+NET annodes(4) LOC = "E15";
+NET annodes(3) LOC = "D16";
+NET annodes(2) LOC = "E16";
+NET annodes(1) LOC = "F16";
+NET annodes(0) LOC = "G16";
+
+NET segments(6) LOC = "P16";
+NET segments(5) LOC = "P15";
+NET segments(4) LOC = "T15";
+NET segments(3) LOC = "T14";
+NET segments(2) LOC = "T13";
+NET segments(1) LOC = "R16";
+NET segments(0) LOC = "R15";
