@@ -18,7 +18,7 @@ end DisplayDifferentValues;
 
 architecture Behavioral of DisplayDifferentValues is
     signal active_dp : integer range 0 to 7 := 0;   -- selected active display
-    signal counter : integer range 0 to 50000 := 0; -- clk refresh rate
+    signal counter : integer range 0 to 50000 := 0; -- clk refresh rate 1ms (1ms x 50Mh = 50k)
     type digit_array (0 to 7) of std_logic_vector(6 downto 0); -- TYPE of variable to use it as a constant
     constant digit_data : digit_array := ( -- constant array for the display numbers
         "1111110", -- 0
