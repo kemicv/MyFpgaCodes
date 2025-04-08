@@ -43,28 +43,28 @@ begin
 
             case active_dp is
                 when 0 => 
-                    annodes <= "00000001";
+                    annodes <= "11111110";
                     segments <= not digit_data(0);
                 when 1 =>
-                    annodes <= "00000010";
+                    annodes <= "11111101";
                     segments <= not digit_data(1);
                 when 2 =>
-                    annodes <= "00000100";
+                    annodes <= "11111011";
                     segments <= not digit_data(2);
                 when 3 =>
-                    annodes <= "00001000";
+                    annodes <= "11110111";
                     segments <= not digit_data(3);
                 when 4 =>
-                    annodes <= "00010000";
+                    annodes <= "11101111";
                     segments <= not digit_data(4);
                 when 5 =>
-                    annodes <= "00100000";
+                    annodes <= "11011111";
                     segments <= not digit_data(5);
                 when 6 =>
-                    annodes <= "01000000";
+                    annodes <= "10111111";
                     segments <= not digit_data(6);
                 when 7 =>
-                    annodes <= "10000000";
+                    annodes <= "01111111";
                     segments <= not digit_data(7);
             end case;
         end if;
