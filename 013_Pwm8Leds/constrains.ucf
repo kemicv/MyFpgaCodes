@@ -1,0 +1,12 @@
+NET clk LOC = "E7";
+
+NET s LOC = "M1";
+
+NET led(7) LOC = "N12";
+NET led(6) LOC = "P9";
+NET led(5) LOC = "N6";
+NET led(4) LOC = "M12";
+NET led(3) LOC = "T9";
+NET led(2) LOC = "T6";
+NET led(1) LOC = "T4";
+NET led(0) LOC = "P1";
