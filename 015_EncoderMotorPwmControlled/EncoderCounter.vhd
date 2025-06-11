@@ -2,8 +2,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
--- This is a counter for an encoder A and B signal. Each change sums to the counter.
--- This implements the binary decoder to show the output.
+-- This is a counter for an encoder A and B signal. It increments/decrease depending
+-- on the previous state when AB is '00'.
+-- It implements a decimal decoder to show the output, But this is not the current
+-- value.
 
 entity EncoderCounter is
     port ( clk    : in std_logic;
@@ -33,17 +35,10 @@ begin
 			newValue <= to_integer(unsigned(syncEncoder));
 			
 			if (newValue /= oldValue) then
-				increment <= '1';
-				
-				if (newValue = 2 and oldValue = 0) then
+				if (newValue = 0 and oldValue = 1) then
 					counter <= counter + 1;
-				elsif (newValue = 3 and oldValue = 2) then
-					counter <= counter + 1;
-				elsif (newValue = 1 and oldValue = 3) then
-					counter <= counter + 1;
-				elsif (newValue = 0 and oldValue = 1) then
-					counter <= counter + 1;
-				else 
+					increment <= '1';
+				elsif (newValue = 0 and oldValue = 2) then
 					counter <= counter - 1;
 				end if;
 

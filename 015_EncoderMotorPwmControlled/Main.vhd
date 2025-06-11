@@ -2,6 +2,21 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+ -- Block to control a motor with encoder using PWM signal. It increments a counter
+ -- each time the encoder value its '00'.
+
+ -- ins:
+ -- in1 & 2 are switches to contorl FWD/REV rotations,
+ -- pwmChange is a switch to jump from 10% to 80% when its enabled,
+ -- encoderA & B are the input signals for the encoder (hall),
+ -- outs:
+ -- out1 & 2 are the signals for the motor driver for FWD/REV motor direction
+ -- pwm is the signal for the pwm
+ -- segments and display are used to shown the value
+
+ -- IMPORTANT: the shown value on the displays do not display the actual counter.
+ -- open the Decoder to see more details.
+
 entity MotorControl is
     port( clk: in std_logic;
           in1: in std_logic; -- Switch for motor FWD
@@ -17,7 +32,7 @@ entity MotorControl is
 end MotorControl;
 
 architecture Behavioral of MotorControl is
-    constant PwmCounts: integer := 250_000; --25k
+    constant PwmCounts: integer := 25_000;
     signal DutyCycle: integer := 0; -- use value from 0 to 100
 begin
     pwmIp: entity work.PwmControl

@@ -2,8 +2,9 @@ library IEEE;
 use IEEE.std_logic_1164.ALL;
 use IEEE.numeric_std.ALL;
 
--- enables FPGA to count from 0 to 9999 each 10ms, so the displays
--- represents 00ss00ms.
+-- THIS IS NOT AN ACTUAL COUNTER
+-- This block simulates to count from 0 to 9,999,999. It requires a command to
+-- perform an increment in the displays.
 
 entity DecimalDecoder is
     port (  clk     : in std_logic;
