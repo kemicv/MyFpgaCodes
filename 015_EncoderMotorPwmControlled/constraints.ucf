@@ -1,0 +1,31 @@
+NET clk LOC = "E7";
+
+// Inputs
+NET in1 LOC = "M1";
+NET in2 LOC = "P2";
+NET pwmChange LOC = "N9";
+NET encoderA LOC = "E3";
+NET encoderB LOC = "E4";
+
+// Outputs
+NET out1 LOC = "A14";
+NET out2 LOC = "C16";
+NET pwm LOC = "B10";
+
+// Displays
+NET display(7) LOC = "E11";
+NET display(6) LOC = "D11";
+NET display(5) LOC = "C15";
+NET display(4) LOC = "E15";
+NET display(3) LOC = "D16";
+NET display(2) LOC = "E16";
+NET display(1) LOC = "F16";
+NET display(0) LOC = "G16";
+
+NET segments(6) LOC = "P16";
+NET segments(5) LOC = "P15";
+NET segments(4) LOC = "T15";
+NET segments(3) LOC = "T14";
+NET segments(2) LOC = "T13";
+NET segments(1) LOC = "R16";
+NET segments(0) LOC = "R15";

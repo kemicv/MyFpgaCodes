@@ -22,8 +22,8 @@ architecture Behavioral of DecimalDecoder is
     signal pos6 : integer range 0 to 9 := 0; -- millions
     signal sig : integer range 0 to 9 := 0; -- - sign
     signal clkdiv_dpfreshrate : integer range 0 to 50_000 := 0; -- fresh rate for dislays each 1ms
-    signal active_dp : integer range 0 to 3 := 0;
-    type digit_array is array (0 to 9) of std_logic_vector(6 downto 0); -- TYPE of variable to use it as a constant
+    signal active_dp : integer range 0 to 7 := 0;
+    type digit_array is array (0 to 10) of std_logic_vector(6 downto 0); -- TYPE of variable to use it as a constant
     constant digit_data : digit_array := ( -- constant array for the display numbers
         "1111110", -- 0
         "0110000", -- 1
@@ -71,7 +71,7 @@ begin
                     end if;
                 end if;
             end if;
-        end if;
+		end if;
     end process;
 
     process(clk)
@@ -79,7 +79,7 @@ begin
         if rising_edge(clk) then
             if clkdiv_dpfreshrate = 50_000 then
                 clkdiv_dpfreshrate <= 0;
-                active_dp <= (active_dp + 1) mod 4;
+                active_dp <= (active_dp + 1) mod 8;
             else
                 clkdiv_dpfreshrate <= clkdiv_dpfreshrate + 1;
             end if;
@@ -96,6 +96,18 @@ begin
                 when 3 =>
                     display <= "11110111";
                     segments <= not digit_data(pos3);
+				when 4 =>
+                    display <= "11101111";
+                    segments <= not digit_data(pos4);
+				when 5 =>
+                    display <= "11011111";
+                    segments <= not digit_data(pos5);
+				when 6 =>
+                    display <= "10111111";
+                    segments <= not digit_data(pos6);
+				when 7 =>
+                    display <= "01111111";
+                    segments <= not digit_data(sig);
             end case;
         end if;
     end process;

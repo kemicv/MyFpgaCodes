@@ -12,7 +12,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity PwmControl is
     port ( clk       : in std_logic;
-           counts    : in integer range 0 to 65_535;
+           counts    : in integer range 0 to 16_000_000;
            dutyCycle : in integer range 0 to 100;
            pwmSignal : out std_logic );
 end PwmControl;
